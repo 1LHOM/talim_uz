@@ -1,0 +1,25 @@
+{% extends 'auth_app/base.html' %}
+{% load static %}
+
+{% block content %}
+    {% include 'main_app/includes/inc_nav_bar.html' %}
+
+    <div class="login-container">
+        <div class="profile-container">
+            <img src="/files/{{ user.avatar }}" alt="pic">
+
+      <div class="login-box">
+        <h2>Редактировать профиль</h2>
+        <hr />
+        <form action="{% url 'auth_app:edit' %}" method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+            {{ edit_form.as_p }}
+            <br>
+            <button class="form-control" type="submit">Сохранить</button>
+
+        </form>
+          <a href="{% url 'home' %}"><button class="new_account">На главную</button></a>
+      </div>
+    </div>
+    </div>
+{% endblock %}

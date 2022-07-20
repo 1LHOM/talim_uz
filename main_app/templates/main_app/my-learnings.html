@@ -1,0 +1,98 @@
+{% extends 'main_app/base.html' %}
+{% load static %}
+
+{% block content %}
+
+    {% include 'main_app/includes/inc_nav_bar.html' %}
+    <div class="my-learnings-container">
+      <div class="welcoming-desk">
+        <h1>Добро пожаловать {{ user.first_name }}!</h1>
+        <h4>Ваша цель обучения: Здесь будет уникалный текст студента</h4>
+      </div>
+      <div class="sorting-bar">
+        <form action="action_page">
+          <label for="cars">Сортировка:</label>
+          <select name="sorting" title="sort">
+            <option value="default">По умолчанию</option>
+            <option value="rating">Лучший рейтинг</option>
+            <option value="date">По дате</option>
+            <option value="price">По цене</option>
+          </select>
+          <input type="submit" value="Go" />
+        </form>
+        <form action="action_page">
+          <label for="progress">Фильтер:</label>
+          <select id="progress" name="cars">
+            <option value="default">В процессе</option>
+            <option value="rating">Завершенный</option>
+            <option value="date">В архиве</option>
+          </select>
+        </form>
+        <div class="change-view">
+          <div class="list-view active" onclick="">
+            <img src="{% static 'img/list.svg' %}" alt="pic" />
+            <p>Список</p>
+          </div>
+          <div class="grid-view" onclick="">
+            <img src="{% static 'img/grid.svg' %}" alt="" />
+            <p>Сетка</p>
+          </div>
+        </div>
+      </div>
+      <div class="learnings-list">
+        <div class="lesson-block">
+          <img src="{% static 'img/django.jpg' %}" alt="pic" />
+          <div class="vertical-block">
+            <h3>Разработка веб приложения на фрейворке Django</h3>
+            <h4>Текуший урок: <span>Урок 1. Django - что это такое, порядок установки</span></h4>
+            <div class="progress-bar">
+              <div class="percentage" style="width: 0"></div>
+            </div>
+            <p>0% Завершен</p>
+          </div>
+          <a href="{% url 'example-course' 4 0 %}" class="blue-button"
+            >Продолжить обучение</a>
+        </div>
+          <div class="lesson-block">
+          <img src="{% static 'img/python.jpg' %}" alt="pic" />
+          <div class="vertical-block">
+            <h3>Основы прогрограммирование на языке</h3>
+            <h4>Текуший урок: <span>Урок 1. Знакомство с Python</span></h4>
+            <div class="progress-bar">
+              <div class="percentage" style="width: 0"></div>
+            </div>
+            <p>0% Завершен</p>
+          </div>
+          <a href="{% url 'example-course' 0 0 %}" class="blue-button"
+            >Продолжить обучение</a>
+        </div>
+          <div class="lesson-block">
+          <img src="{% static 'img/python.jpg' %}" alt="pic" />
+          <div class="vertical-block">
+            <h3>Основы прогрограммирование на языке</h3>
+            <h4>Текуший урок: <span>Урок 1. Знакомство с Python</span></h4>
+            <div class="progress-bar">
+              <div class="percentage" style="width: 0"></div>
+            </div>
+            <p>0% Завершен</p>
+          </div>
+          <a href="{% url 'example-course' 0 0 %}" class="blue-button"
+            >Продолжить обучение</a>
+        </div>
+          <div class="lesson-block">
+          <img src="{% static 'img/python.jpg' %}" alt="pic" />
+          <div class="vertical-block">
+            <h3>Основы прогрограммирование на языке</h3>
+            <h4>Текуший урок: <span>Урок 1. Знакомство с Python</span></h4>
+            <div class="progress-bar">
+              <div class="percentage" style="width: 0"></div>
+            </div>
+            <p>0% Завершен</p>
+          </div>
+          <a href="{% url 'example-course' 0 0 %}" class="blue-button"
+            >Продолжить обучение</a>
+        </div>
+
+      </div>
+    </div>
+{% endblock %}

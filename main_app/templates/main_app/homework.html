@@ -1,0 +1,115 @@
+{% extends 'main_app/base.html' %}
+{% load static %}
+
+{% block content %}
+{% include 'main_app/includes/inc_nav_bar.html' %}
+    <div class="lesson-container">
+      <div class="left-panel-container">
+        <div class="left-panel-block">
+          {% for lesson in current_lesson.lessons_list %}
+            <div class="lesson-play-block {% if lesson.lesson_id == lesson_num %}active{% endif %}">
+                <div class="vertical-block-for-text">
+                    <a href="{% url 'example-course' current_lesson.pk lesson.lesson_id %}">
+                        <p>{{ lesson.name }}</p>
+                        <p>{{ lesson.short_desc }}</p>
+
+                    </a>
+                </div>
+                <a href="#"><img src="{% static 'img/play.svg' %}" alt="play" /> </a>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="right-panel-block">
+
+        <div class="lesson-content">
+          <div class="homework-questions">
+              {% for block in current_lesson.lesson_data %}
+                    {% if block.lesson_id == lesson_num %}
+                        {% for foo in block.lesson_blocks %}
+                            {% autoescape off %}
+                                {{ foo }}<br>
+                            {% endautoescape %}
+
+                        {% endfor %}
+                    {% endif %}
+
+
+              {% endfor %}
+
+          </div>
+          <hr />
+        </div>
+        <div class="submit-homework-container">
+          <div
+            class="dragging-area"
+          >
+            <p>Переташите суда файл или выберите</p>
+          </div>
+          <form action="send-homework" method="post">
+            <input
+              class="file"
+              type="file"
+              placeholder="выберите файл"
+              accept="image/png, image/jpeg, .zip, .rar, .doc, .docx, .pdf, .ppt, .pptx"
+            />
+            <input type="button" value="Отправить" />
+          </form>
+        </div>
+        <div class="comments-container">
+          <div class="add-comment-block">
+            <form action="action request" method="post">
+                <label for="comment"></label><textarea
+                placeholder="Пишите свои комментарии здесь..."
+                id="comment"
+              ></textarea>
+              <br />
+              <input type="submit" value="Отправить" class="blue-button" />
+            </form>
+          </div>
+
+          <div class="view-comments-container">
+            <div class="comment-block">
+              <div class="user-info">
+                <a href="#" title="username"
+                  ><img src="{% static 'img/course_image_3.jpg' %}" alt=""
+                /></a>
+                <h5>Валиев Саша:</h5>
+              </div>
+              <div class="comment-of-user">
+                <p>
+                  супер, мне как раз надо знать базово питон, чтобы решать последнее задание по инфооматике в огэ
+                </p>
+              </div>
+            </div>
+            <div class="comment-block">
+              <div class="user-info">
+                <a href="#" title="username"
+                  ><img src="{% static 'img/course_image_1.jpg' %}" alt=""
+                /></a>
+                <h5>Александр:</h5>
+              </div>
+              <div class="comment-of-user">
+                <p>
+                  Добрый день курс будет доступен всегда или позже пропадет?
+                </p>
+              </div>
+            </div>
+            <div class="comment-block">
+              <div class="user-info">
+                <a href="#" title="username"
+                  ><img src="{% static 'img/course_image_2.jpg' %}" alt=""
+                /></a>
+                <h5>Максим Тимуров:</h5>
+              </div>
+              <div class="comment-of-user">
+                <p>
+                  Спасибо!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+{% endblock %}

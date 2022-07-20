@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Программирование",
+    "description": "Языки программировании как Python, C++, C#, C, Go, PHP, Javascript итд"
+  },
+  {
+    "name": "Маркетинг",
+    "description": "Описание"
+  },
+  {
+    "name": "Аналитика данных",
+    "description": "."
+  },
+  {
+    "name": "Школьные предметы",
+    "description": "."
+  },
+  {
+    "name": "Веб разработка",
+    "description": "."
+  },
+  {
+    "name": "Разработка игр",
+    "description": "."
+  },
+  {
+    "name": "Саморазвития",
+    "description": "."
+  },
+  {
+    "name": "Бизнес аналитика",
+    "description": "."
+  },
+  {
+    "name": "Большие данные",
+    "description": "."
+  },
+  {
+    "name": "Спорт",
+    "description": "."
+  }
+]

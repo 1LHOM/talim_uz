@@ -1,0 +1,63 @@
+{% load static %}
+<div class="nav-bar">
+    <a href="{% url 'home' %}">
+      <img src="{% static 'img/logo.png' %}" alt="logo" class="logo" />
+    </a>
+    <a href="{% url 'courses:category' 0 %}" class="button">
+      <button>Каталог курсов</button></a
+    >
+    <label for="site-search"></label>
+    <form action="" method="get" target="_blank">
+        <label>
+            <input class="big-search" type="search" name="coursesearch" list="recent searches list" placeholder="Поиск..."/>
+        </label>
+    </form>
+    
+    <datalist id="recent searches list">
+      <option value="Python"></option>
+    
+      <option value="Django"></option>
+    
+      <option value="Javascript"></option>
+    
+      <option value="AJAX"></option>
+    </datalist>
+    <a href="{% url 'my-learnings' %}">
+        <button class="my-courses">Моё обучение</button>
+    </a>
+    {% if user.is_authenticated %}
+        <div class="status-bar">
+        <a href="#">
+            <img src="{% static 'img/message.svg' %}" class="icon" alt="mail" />
+        </a>
+        <a href="#">
+            <img src="{% static 'img/calendar.svg' %}" class="icon" alt="mail" />
+        </a>
+        <a href="#">
+            <img src="{% static 'img/cart.png' %}" class="icon" alt="mail" />
+        </a>
+            <a href="{% url 'auth_app:edit' %}"><img src="{% static 'img/profile.svg' %}" class="icon" alt="mail" /></a>
+            {% if user.first_name %}
+                <a href="{% url 'auth_app:edit' %}"><button>{{ user.first_name }}</button></a>
+            {% else %}
+                <button>Пользователь</button>
+            {% endif %}
+        </div>
+        <a href="{% url 'auth_app:logout' %}">
+            <button class="my-courses">Выйти</button>
+        </a>
+    {% else %}
+        <a href="#">
+            <img src="{% static 'img/cart.png' %}" class="icon" alt="mail" />
+        </a>
+        <a href="{% url 'auth_app:login' %}">
+            <button class="my-courses">Войти</button>
+        </a>
+        <a href="{% url 'auth_app:register' %}">
+            <button class="my-courses">Регистрация</button>
+        </a>
+    {% endif %} 
+
+
+
+</div>

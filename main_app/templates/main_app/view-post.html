@@ -1,0 +1,18 @@
+{% extends 'main_app/base.html' %}
+{% load static %}
+
+{% block content %}
+
+{% include 'main_app/includes/inc_nav_bar.html' %}
+    <div class="news-wrapper">
+    <div class="news-container-full">
+        <img src="/files/{{ post.image }}" alt=""><br>
+        <h1>{{ post.name }}</h1>
+        <h4>{{ post.short_desc }}</h4>
+        <h5>{{ post.author }}</h5>
+        <hr>
+        <p>{{ post.full_text }}</p>
+    </div>
+    </div>
+
+{% endblock %}

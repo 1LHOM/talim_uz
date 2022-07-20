@@ -1,0 +1,71 @@
+{% extends 'main_app/base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="container">
+    {% include 'main_app/includes/inc_nav_bar.html' %}
+      <div class="page-adress">
+        <a href="{% url 'home' %}">Главная</a> > <a href="#">Категория курсов</a>
+      </div>
+      <div class="course-container">
+        <div class="filters-bar">
+          <a href="{% url 'courses:category' 0 %}" class="{% if request.resolver_match.kwargs.pk == 0 %}active{% endif %}">Все курсы</a>
+          <hr />
+            {% for category in categories_list %}
+
+                <a href="{% url 'courses:category' category.pk %} " class="{% if request.resolver_match.kwargs.pk == category.pk %}active{% endif %}">{{ category.name }}</a>
+
+            {% endfor %}
+
+        </div>
+        <div class="sorting-bar">
+          <form action="action_page">
+            <label for="cars">Сортировка:</label>
+            <select id="cars" name="cars">
+              <option value="default">По умолчанию</option>
+              <option value="rating">Лучший рейтинг</option>
+              <option value="date">По дате</option>
+              <option value="price">По цене</option>
+            </select>
+            <input type="submit" value="Go" />
+          </form>
+          <div class="change-view">
+            <div class="list-view active" onclick="">
+              <img src="{% static 'img/list.svg' %}" alt="pic" />
+              <p>Список</p>
+            </div>
+            <div class="grid-view" onclick="">
+              <img src="{% static 'img/grid.svg' %}" alt="" />
+              <p>Сетка</p>
+            </div>
+          </div>
+        </div>
+        <div class="courses">
+
+            {% for course in courses_list %}
+                <div class="course-block">
+            <div class="image-block">
+              <img src="/files/{{ course.image }}" alt="pic" />
+            </div>
+
+            <a href="{% url 'view-course' course.pk %}">
+                <h3>{{ course.name }}</h3>
+                <h5 class="teacher-name">{{ course.teacher }}</h5>
+                <h4>{% if course.price == 0 %}
+                    <h4 class="price-green">Бесплатно</h4>
+                    {% else %}
+                    <h4 class="price-purple">{{ course.price }} руб</h4>
+                {% endif %}</h4>
+                <p>{{ course.description }}</p>
+
+            </a>
+
+          </div>
+            {% endfor %}
+        </div>
+        <div class="pagination-panel">
+          <a href="#" class="prev">< Пред</a><a href="#" class="next">След ></a>
+        </div>
+      </div>
+    </div>
+{% endblock %}

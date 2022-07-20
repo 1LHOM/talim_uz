@@ -1,0 +1,57 @@
+{% extends 'main_app/base.html' %}
+{% load static %}
+
+{% block content %}
+
+{% include 'main_app/includes/inc_nav_bar.html' %}
+
+    <div class="course-view-banner">
+      <div class="first-left-block">
+        <h1> {{ course.name }} </h1>
+        <h4>
+          {{ course.description }}
+        </h4>
+        <h3>
+            Teacher: {{ course.teacher }}
+        </h3>
+        <video
+          src="{% static 'src/multik.mp4' %}"
+          type="video/mp4"
+          controls
+          width="800px"
+        ></video>
+      </div>
+      <div class="second-right-block">
+        <img src="/files/{{ course.image }}" alt="pic" />
+        <h2>{{ course.price }} so'm</h2>
+        <a href="#" class="button">Добавить в корзину</a>
+        <a href="#" class="button">Купить сейчас</a>
+      </div>
+    </div>
+    <div class="course-view-container">
+      <div class="about-course">
+        <h1>Описание курса</h1>
+        <hr />
+        <p>
+          {{ course.description }}
+        </p>
+      </div>
+      <div class="course-contents-list">
+        <h1>Список уроков</h1>
+        <hr />
+        <br />
+          {% for lesson in course.lessons_list %}
+              <div class="collapsible">
+              <input type="checkbox" id="{{ lesson.lesson_id }}" />
+              <label for="{{ lesson.lesson_id }}">{{ lesson.name }}</label>
+              <div class="collapsible-text">
+                <p>
+                {{ lesson.short_desc }}
+                </p>
+          </div>
+        </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+{% endblock %}

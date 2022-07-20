@@ -1,0 +1,235 @@
+{% extends 'main_app/base.html' %}
+{% load static %}
+
+{% block content %}
+
+    {% include 'main_app/includes/inc_nav_bar.html' %}
+    <div class="lesson-container">
+      <div class="left-panel-container">
+        <div class="left-panel-block">
+          <div class="lesson-play-block active">
+            <div class="vertical-block-for-text">
+              <a href="{% url 'example-course' 0 1 %}"
+                ><p>Урок 1. Видеоурок</p>
+                <p>Знакомство с Python</p></a>
+            </div>
+            <a href="{% url 'example-course' 0 1 %}"><img src="{% static 'img/play.svg' %}" alt="play" /> </a>
+          </div>
+            <div class="lesson-play-block">
+            <div class="vertical-block-for-text">
+              <a href="{% url 'example-course' 3 1 %}"><p>Домашние задание</p>
+                <p>По уроку 1</p></a>
+            </div>
+            <a href="{% url 'example-course' 3 1 %}">
+                <img src="{% static 'img/homework.svg' %}" alt="play" /> </a>
+          </div>
+          <div class="lesson-play-block">
+            <div class="vertical-block-for-text">
+              <a href=""
+                ><p>Урока 2. Лекция</p>
+                <p>
+                  Некоторые встроенные типы и операции с ними
+                </p>
+              </a>
+            </div>
+            <a href="#"><img src="{% static 'img/play.svg' %}" alt="play" /> </a>
+          </div>
+          <div class="lesson-play-block ">
+            <div class="vertical-block-for-text">
+              <a href=""
+                ><p>Урок 3. </p>
+                <p>Функции и Словари</p></a
+              >
+            </div>
+            <a href="#"><img src="{% static 'img/play.svg' %}" alt="play" /> </a>
+          </div>
+
+          <div class="lesson-play-block">
+            <div class="vertical-block-for-text">
+              <a href=""
+                ><p>Урок 4.</p>
+                <p>Работа смодулями и пакетами</p></a
+              >
+            </div>
+            <a href="#"><img src="{% static 'img/play.svg' %}" alt="play" /> </a>
+          </div>
+          <div class="lesson-play-block">
+            <div class="vertical-block-for-text">
+              <a href=""
+                ><p>Урок 5.
+                  Генераторы и comprehensions. Множества
+                </p></a
+              >
+            </div>
+            <a href="#"><img src="{% static 'img/play.svg' %}" alt="play" /> </a>
+          </div>
+          <div class="lesson-play-block">
+            <div class="vertical-block-for-text">
+              <a href=""
+                ><p>Урок 6.</p>
+                <p>Работа с файлами</p></a>
+            </div>
+            <a href="#"><img src="{% static 'img/play.svg' %}" alt="play" /> </a>
+          </div>
+          <div class="lesson-play-block">
+            <div class="vertical-block-for-text">
+              <a href=""
+                ><p>Урок 7.</p>
+                <p>Работа с файлами</p></a
+              >
+            </div>
+            <a href="#"><img src="{% static 'img/play.svg' %}" alt="play" /> </a>
+          </div>
+          <div class="lesson-play-block">
+            <div class="vertical-block-for-text">
+              <a href=""
+                ><p>Урок 8.</p>
+                <p>Регулярные выражения и декораторы в Python</p></a
+              >
+            </div>
+            <a href="#"><img src="{% static 'img/play.svg' %}" alt="play" /> </a>
+          </div>
+          <div class="lesson-play-block">
+            <div class="vertical-block-for-text">
+              <a href=""
+                ><p>Урок 9.</p>
+                <p>
+                  Объектно-ориентированное программирование. Введение
+                </p></a
+              >
+            </div>
+            <a href="#"><img src="{% static 'img/play.svg' %}" alt="play" /> </a>
+          </div>
+          <div class="lesson-play-block">
+            <div class="vertical-block-for-text">
+              <a href="">
+                  <p>Урок 10.</p>
+                  <p>Объектно-ориентированное программирование. Продвинутый уровень</p>
+              </a>
+            </div>
+            <a href="#"><img src="{% static 'img/play.svg' %}" alt="play" /> </a>
+          </div>
+          <div class="lesson-play-block">
+            <div class="vertical-block-for-text">
+              <a href=""
+                ><p>Урок 11.</p>
+                <p>Объектно-ориентированное программирование. Полезные дополнения</p></a
+              >
+            </div>
+            <a href="#"><img src="{% static 'img/play.svg' %}" alt="play" /> </a>
+          </div>
+            <div class="lesson-play-block">
+            <div class="vertical-block-for-text">
+              <a href=""><p>Итоговый тест.</p>
+                <p>По всем урокам</p></a>
+            </div>
+            <a href="#"><img src="{% static 'img/task.svg' %}" alt="play" /> </a>
+          </div>
+        </div>
+      </div>
+      <div class="right-panel-block">
+        <video
+          src="{% static 'src/multik.mp4' %}"
+          type="video/mp4"
+          controls
+          width="800px"
+        ></video>
+        <div class="lesson-content">
+        <h1>Основы программирования в Python</h1>
+        <ul>
+            <li>Статус: Курс обязательный</li>
+            <li>Кто читает: Кафедра высшей математики</li>
+            <li>Язык: русский</li>
+            <li>Формат изучения: с онлайн-курсом</li>
+            <li>Преподаватели: Жучкова Светлана Васильевна, Тамбовцева Алла Андреевна</li>
+        </ul>
+        <h3>Аннотация</h3>
+        <p>Курс «Основы программирования в Python» имеет целью обучить студентов не только работе в Python, но и основам программирования вообще, поскольку наиболее базовые принципы являются схожими почти во всех языках программирования. При решении ряда задач исследователи часто сталкиваются с необходимостью работать с большими массивами данных. Характер данных может быть очень разным: политологические индексы, посчитанные для разных стран, социально-экономические показатели по регионам России и муниципальным образованиям, тексты законопроектов и инициатив, тексты пользователей в социальных сетях и т.д. Для того чтобы эффективно работать с разными типами данных, необходимо знать основы программирования, так как именно навыки программирования позволяют автоматически собирать необходимую информацию за достаточно быстрое время. В качестве языка программирования в данном курсе используется Python. Язык Python на данный момент является очень популярным, в том числе в исследованиях в рамках социальных наук. Дисциплина подразделяется на два блока. Первый блок посвящен основам программирования и включает необходимые для дальнейшей работы в Python темы: переменные и типы данных, списки и кортежи, словари, условные конструкции, циклы и функции. Второй блок посвящен решению прикладных задач в Python и включает темы, связанные со сбором и анализом данных: выгрузка данных с сайтов, парсинг веб-страниц, работа с таблицами и разведывательный анализ данных</p>
+
+        <h3>Цель освоения дисциплины</h3>
+        <p>Овладение навыками программирования на языке Python, овладение методами сбора и обработки данных для решения политологических и социально-экономических задач</p>
+        <hr />
+        <div class="collapsible">
+        <input type="checkbox" id="1" checked/>
+        <label for="1">История Python</label>
+        <div class="collapsible-text">
+          <h2>История</h2>
+          <p>Язык программирования Python был создан примерно в 1991 году голландцем Гвидо ван Россумом. Свое имя - Пайтон (или Питон) - получил от названия телесериала, а не пресмыкающегося. После того, как Россум разработал язык, он выложил его в Интернет, где уже целое сообщество программистов присоединилось к его улучшению. Python активно совершенствуется и в настоящее время. Часто выходят его новые версии. Официальный сайт http://python.org</p>
+        </div>
+      </div>
+        <div class="collapsible">
+        <input type="checkbox" id="2" />
+        <label for="2">Особенности</label>
+        <div class="collapsible-text">
+          <h2>Особенности</h2>
+          <p>Python – это интерпретируемый язык программирования: исходный код частями преобразуется в машинный в процессе выполнения специальной программой — интерпретатором. Python характеризуется ясным синтаксисом. Читать код на этом языке программирования достаточно легко, т.к. в нем мало вспомогательных элементов, а правила языка заставляют программистов делать отступы. Понятно, что хорошо оформленный текст с малым количеством отвлекающих элементов читать и понимать легче. Python – это полноценный, можно сказать универсальный, язык программирования. Он поддерживает объектно-ориентированное программирование (на самом деле он и разрабатывался как объектно-ориентированный язык). Также Python распространяется свободно на основании лицензии подобной GNU General Public License.</p>
+        </div>
+      </div>
+        <div class="collapsible">
+            <input type="checkbox" id="3" />
+            <label for="3">Данные и их типы</label>
+            <div class="collapsible-text">
+              <h2>Данные и их типы</h2>
+              <p>Можно заметить, что все, что мы делаем, мы делаем над чем-то — какими-то предметами или объектами. Мы меняем свойства объектов и их возможности. Программы для компьютеров также манипулируют какими-то объектами (назовем их пока данными). Очевидно, данные бывают разными. Очень часто компьютерной программе приходится работать с числами и строками. Например, на прошлом уроке мы "манипулировали" числами, выполняя над ними арифметические операции. Можно сказать, что операция сложения выполняла изменение первого числа на величину второго, или умножение увеличивало одно число в количество раз, соответствующее второму. Числа в свою очередь также бывают разными: целыми, дробными, могут иметь огромное значение или очень длинную дробную часть. При знакомстве с языком программирования Python мы точно столкнемся с тремя типами данных: – целые числа (integer) – положительные и отрицательные целые числа, а также 0 (например, 4, 687, -45, 0). – числа с плавающей точкой (float point) – дробные числа (например, 1.45, -3.789654, 0.00453). Примечание: разделителем целой и дробной части служит точка, а не запятая. – строки (string) — набор символов, заключенных в кавычки (например, "ball", "What is your name?", 'dkfjUUv', '6589'). Примечание: кавычки в Python могут быть одинарными или двойными.</p>
+            </div>
+          </div>
+        <hr />
+        </div>
+
+        <div class="comments-container">
+          <div class="add-comment-block">
+            <form action="action request" method="post">
+                <label for="comment"></label><textarea
+                placeholder="Пишите свои комментарии здесь..."
+                id="comment"
+              ></textarea>
+              <br />
+              <input type="submit" value="Отправить" class="blue-button" />
+            </form>
+          </div>
+
+          <div class="view-comments-container">
+            <div class="comment-block">
+              <div class="user-info">
+                <a href="#" title="username"
+                  ><img src="{% static 'img/course_image_3.jpg' %}" alt=""
+                /></a>
+                <h5>Валиев Саша:</h5>
+              </div>
+              <div class="comment-of-user">
+                <p>
+                  супер, мне как раз надо знать базово питон, чтобы решать последнее задание по инфооматике в огэ
+                </p>
+              </div>
+            </div>
+            <div class="comment-block">
+              <div class="user-info">
+                <a href="#" title="username"
+                  ><img src="{% static 'img/course_image_1.jpg' %}" alt=""
+                /></a>
+                <h5>Александр:</h5>
+              </div>
+              <div class="comment-of-user">
+                <p>
+                  Добрый день курс будет доступен всегда или позже пропадет?
+                </p>
+              </div>
+            </div>
+            <div class="comment-block">
+              <div class="user-info">
+                <a href="#" title="username"
+                  ><img src="{% static 'img/course_image_2.jpg' %}" alt=""
+                /></a>
+                <h5>Максим Тимуров:</h5>
+              </div>
+              <div class="comment-of-user">
+                <p>
+                  Спасибо!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+{% endblock %}
